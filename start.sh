@@ -6,12 +6,12 @@ start_frontend() {
   echo "Starting frontend..."
   cd frontend || exit
   
-  # Run npm start and check its output
-  npm start | tee output.log  # Redirect output to a file
+  # Run npm start and capture its output
+  npm start 2>&1 | tee output.log  # Redirect both stdout and stderr to a file
   
-  # Check if npm start output contains "react-scripts start"
+  # Check if npm start output contains "react-scripts: command not found"
   if grep -q "react-scripts: command not found" output.log; then
-    echo "Detected 'react-scripts start'. Running npm install..."
+    echo "Detected 'react-scripts: command not found'. Running npm install..."
     npm install
     npm start  # Start again after npm install
   fi

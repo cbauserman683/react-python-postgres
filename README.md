@@ -55,4 +55,22 @@ docker-compose down -v
 
 ## Known issues
 
-- Sometimes python BE doesn't start the first time. Seems to always start the second time so just "turn it off and on again
+- Sometimes python BE doesn't start the first time. Seems to always start the second time so just "turn it off and on again"
+- The style between pages does not match at all. (Gold star if you can guess why)
+
+## Contributing
+
+You are welcome (empowered, even) to make recommendations on improving this project. PRs recommending I improve the readme using the Oxford comma will be ignored.
+
+Branches/PRs should be named in the following way
+
+- Features
+  - Branch
+    - feature/brand-new-feature
+  - Pull Request
+    - Feature: Brand new feature
+- Bugfixes
+  - Branch
+    - bugfix/remove-major-bug
+  - Pull Request
+    - Bugfix: Remove major bug

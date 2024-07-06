@@ -1,6 +1,7 @@
 frontend/node_modules/*
 backend/app/__pycache__/*
 .idea/*
+frontend/output.log
 
 # testing
 /coverage

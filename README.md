@@ -53,6 +53,16 @@ docker-compose down
 docker-compose down -v
 ```
 
+## Additional setup notes
+I wanted to get this up and running on a raspberry pi so I did. Issues I ran into were the following:
+- I had to install docker and docker-compose through the command line. This was a PITA. The raspberry PI 5 is arm64 fyi, or at least mine is.
+  - Next I needed to run the following commands to get docker working properly.
+  - `sudo systemctl status docker` to make sure docker was running.
+    - `sudo systemctl start docker` if not.
+  - `sudo usermod -aG docker $USER` To add your user to the docker group which was required when I saw a permission denied message.
+    - `newgrp docker` to apply these changes immediately.
+- And of course I had to restart docker a few times for the containers to stop exiting.
+
 ## Known issues
 
 - Sometimes python BE doesn't start the first time. Seems to always start the second time so just "turn it off and on again"

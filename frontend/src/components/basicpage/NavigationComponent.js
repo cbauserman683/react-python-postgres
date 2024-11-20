@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavigationComponent = () => {
+const NavigationComponent = ({ token, avatar }) => {
   return (
     <div class="navbar bg-base-100">
       <div class="flex-1">
@@ -34,7 +34,10 @@ const NavigationComponent = () => {
                   <Link to="/faq">FAQ</Link>
                 </li>
                 <li>
-                  <Link to="/services">services</Link>
+                  <Link to="/services">Services</Link>
+                </li>
+                <li>
+                  <Link to="/authentication">Authentication</Link>
                 </li>
               </ul>
             </details>
@@ -42,7 +45,7 @@ const NavigationComponent = () => {
           <li>
             <details>
               <summary>Theme</summary>
-              <ul class="bg-base-100 rounded-t-none p-2">
+              <ul class="menu bg-base-100 rounded-t-none p-2">
                 <li>
                   <input
                     type="radio"
@@ -81,6 +84,33 @@ const NavigationComponent = () => {
                 </li>
               </ul>
             </details>
+          </li>
+          <li>
+            {token ? (
+              <div className="dropdown dropdown-end">
+                <button
+                  tabIndex={0}
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    <img src={avatar} alt="Avatar" />
+                  </div>
+                </button>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link to="/profile">Profile</Link>
+                  </li>
+                  <li>
+                    <Link to="/logout">Logout</Link>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <Link to="/authentication">Login</Link>
+            )}
           </li>
         </ul>
       </div>

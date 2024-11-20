@@ -22,7 +22,7 @@ start_frontend() {
 # Function to start the entire application using docker-compose
 start_docker() {
   echo "Starting the entire application with Docker..."
-  docker-compose up --build
+  docker-compose up --build || docker compose up --build
 }
 
 # Function to display the menu
